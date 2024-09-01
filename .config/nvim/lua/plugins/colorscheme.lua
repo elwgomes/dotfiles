@@ -16,13 +16,16 @@ return {
     { "fenetikm/falcon" },
     { "akinsho/horizon.nvim" },
     { "Shatur/neovim-ayu" },
+    { "folke/tokyonight.nvim" },
+    { "chiendo97/intellij.vim" },
+    { "kvrohit/substrata.nvim" },
 
     -- Configure LazyVim to load gruvbox
     {
         "LazyVim/LazyVim",
         lazy = true,
         opts = {
-            colorscheme = "ayu",
+            colorscheme = "intellij",
         },
     },
 }

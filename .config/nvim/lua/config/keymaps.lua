@@ -2,19 +2,26 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- map("n", "<C-y>", ":!python3 app.py<CR>", { noremap = true, silent = true })
-
 -- local map = vim.api.nvim_set_keymap
 local map = LazyVim.safe_keymap_set
 
-map("n", "<C-y>", ":JavaRunnerRunMain<CR>", { noremap = true, silent = true })
-map("n", "<C-c>", ":JavaRunnerStopMain<CR>", { noremap = true, silent = true })
-map("n", "<C-b>", ":JavaBuildBuildWorkspace<CR>", { noremap = true, silent = true })
-map("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
+----------------------- PYTHON SHIT -------------------------
+-- map("n", "<C-y>", ":!python3 app.py<CR>", { noremap = true, silent = true })
 
--- mvn clean intall
+----------------------- PHP SHIT -------------------------
+-- map("n", "<C-y>", ":!php artisan serve<CR>", { noremap = true, silent = true })
+
+----------------------- GO SHIT -------------------------
+-- map("n", "<C-y>", ":!go run .<CR>", { noremap = true, silent = true })
+
+----------------------- JAVA SHIT -------------------------
+vim.api.nvim_set_keymap("n", "<C-y>", ":JavaRunnerRunMain<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-c>", ":JavaRunnerStopMain<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-b>", ":JavaBuildBuildWorkspace<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
 -- map("n", "<C-m>", ":!mvn clean install<CR>", { noremap = true, silent = true })
 
+----------------------- OTHER KEYMAPS  -------------------------
 -- move lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
@@ -33,10 +40,13 @@ map("n", "<C-S-k>", "5k", { noremap = true, silent = true })
 map("v", "<C-S-k>", "5k", { noremap = true, silent = true })
 
 -- mapeia ir para o fim da linha
-map("n", "<S-t>", "$", { noremap = true, silent = true })
+map("n", "<S-e>", "$", { noremap = true, silent = true })
+map("v", "<S-e>", "$", { noremap = true, silent = true })
 
 -- mapeia ir para o começo da linha
 map("n", "<S-f>", "^", { noremap = true, silent = true })
+map("v", "<S-f>", "^", { noremap = true, silent = true })
+
 -- duplicate lines
 -- map("n", "<C-k>", "<cmd>t+0<cr>==", { desc = "Move Up" })
 -- map("n", "<C-j>", "<cmd>t-1<cr>==", { desc = "Move Down" })
