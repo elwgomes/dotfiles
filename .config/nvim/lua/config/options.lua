@@ -1,6 +1,7 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+
 local opt = vim.opt
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 
@@ -15,7 +16,6 @@ opt.jumpoptions = "view"
 opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points
 opt.list = true -- Show some invisible characters (tabs...
-opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
@@ -27,7 +27,7 @@ opt.shiftwidth = 2 -- Size of an indent
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
-opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+opt.signcolumn = "no" -- Always show the signcolumn, otherwise it would shift the text each time
 opt.smartcase = true -- Don't ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { "en" }
@@ -48,13 +48,13 @@ opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 if vim.fn.has("nvim-0.10") == 1 then
-    opt.smoothscroll = true
-    opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
-    opt.foldmethod = "expr"
-    opt.foldtext = ""
+  opt.smoothscroll = false
+  opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+  opt.foldmethod = "expr"
+  opt.foldtext = ""
 else
-    opt.foldmethod = "indent"
-    opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
+  opt.foldmethod = "indent"
+  opt.foldtext = "v:lua.require'lazyvim.util'.ui.foldtext()"
 end
 
 -- Fix markdown indentation settings
