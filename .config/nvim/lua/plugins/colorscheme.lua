@@ -28,7 +28,7 @@ return {
     "LazyVim/LazyVim",
     lazy = true,
     opts = {
-      colorscheme = "minimal-base16",
+      colorscheme = "gruvbox",
     },
   },
 }

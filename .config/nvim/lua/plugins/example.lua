@@ -19,6 +19,19 @@ return {
       colorscheme = "gruvbox",
     },
   },
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-devicons" },
+    config = function()
+      require("fzf-lua").setup({
+        defaults = {
+          git_icons = false,
+          file_icons = false,
+          color_icons = false,
+        },
+      })
+    end,
+  },
 
   -- change trouble config
   {

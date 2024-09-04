@@ -1,7 +1,3 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 local opt = vim.opt
 opt.guicursor = ""
 
@@ -11,20 +7,20 @@ opt.relativenumber = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-opt.expandtab = false
+opt.expandtab = true
 
 opt.smartindent = true
 
 opt.wrap = false
-opt.swapfile = true
-opt.backup = false
+opt.swapfile = false
+opt.backup = true
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
 opt.termguicolors = true
 opt.scrolloff = 8
-opt.signcolumn = "no"
+-- opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.updatetime = 50
 opt.colorcolumn = "80"
