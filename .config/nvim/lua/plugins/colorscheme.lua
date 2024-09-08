@@ -12,6 +12,7 @@ return {
   { "savq/melange-nvim" },
   { "tanvirtin/monokai.nvim" },
   { "EdenEast/nightfox.nvim" },
+  { "sainnhe/gruvbox-material" },
   { "fenetikm/falcon" },
   { "akinsho/horizon.nvim" },
   { "Shatur/neovim-ayu" },
@@ -23,12 +24,14 @@ return {
   { "rebelot/kanagawa.nvim" },
   { "Yazeed1s/minimal.nvim" },
   { "slugbyte/lackluster.nvim" },
+  { "scottmckendry/cyberdream.nvim" },
+  { "nlknguyen/papercolor-theme" },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     lazy = true,
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "vim",
     },
   },
 }

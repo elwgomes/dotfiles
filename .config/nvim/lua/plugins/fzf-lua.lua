@@ -9,8 +9,8 @@ return {
         color_icons = false,
       },
 
-      vim.keymap.set("n", "<leader> ", require("fzf-lua").files, { desc = "Find Files" }),
-      vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep, { desc = "Grep" }),
+      -- vim.keymap.set("n", "<leader> ", require("fzf-lua").files, { desc = "Find Files" }),
+      -- vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep, { desc = "Grep" }),
     })
   end,
 }
