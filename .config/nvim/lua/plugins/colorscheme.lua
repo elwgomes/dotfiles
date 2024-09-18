@@ -1,3 +1,14 @@
+-- for vim config
+vim.cmd([[
+  augroup CustomHighlight
+    autocmd!
+    autocmd ColorScheme * highlight LspReferenceRead guibg=none guifg=none
+    autocmd ColorScheme * highlight LspReferenceText guibg=none guifg=none
+	autocmd ColorScheme * highlight Pmenu guibg=#2e2e2e
+
+  augroup END
+]])
+
 return {
   { "ellisonleao/gruvbox.nvim" },
   { "craftzdog/solarized-osaka.nvim" },
@@ -26,12 +37,16 @@ return {
   { "slugbyte/lackluster.nvim" },
   { "scottmckendry/cyberdream.nvim" },
   { "nlknguyen/papercolor-theme" },
-  -- Configure LazyVim to load gruvbox
+  { "thallada/farout.nvim" },
+  { "Tsuzat/NeoSolarized.nvim" },
+  { "aktersnurra/no-clown-fiesta.nvim" },
+  { "mikesmithgh/gruvsquirrel.nvim" },
+  { "cdmill/neomodern.nvim" },
   {
     "LazyVim/LazyVim",
     lazy = true,
     opts = {
-      colorscheme = "vim",
+      colorscheme = "mellifluous",
     },
   },
 }

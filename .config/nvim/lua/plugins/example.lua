@@ -53,6 +53,15 @@ return {
     end,
   },
 
+  {
+    "folke/noice.nvim",
+    opts = {
+      presets = {
+        lsp_doc_border = true,
+      },
+    },
+  },
+
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",

@@ -2,7 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local map = LazyVim.safe_keymap_set
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+local opts = { noremap = true, silent = true }
+map("n", "<leader>pv", vim.cmd.Ex)
 
 ----------------------- PYTHON SHIT -------------------------
 -- map("n", "<C-y>", ":!python3 app.py<CR>", { noremap = true, silent = true })
@@ -14,12 +15,22 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- map("n", "<C-y>", ":!go run .<CR>", { noremap = true, silent = true })
 
 ----------------------- JAVA SHIT -------------------------
-map("n", "<C-y>", ":JavaRunnerRunMain<CR>", { noremap = true, silent = true })
-map("n", "<C-c>", ":JavaRunnerStopMain<CR>", { noremap = true, silent = true })
-map("n", "<C-b>", ":JavaBuildBuildWorkspace<CR>", { noremap = true, silent = true })
-map("n", "<C-x>", ":q<CR>", { noremap = true, silent = true })
+
+local function java_keymaps()
+  map("n", "<C-y>", ":JavaRunnerRunMain<CR>", opts)
+  map("n", "<C-c>", ":JavaRunnerStopMain<CR>", opts)
+  map("n", "<C-b>", ":JavaBuildBuildWorkspace<CR>", opts)
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = java_keymaps,
+})
 
 ----------------------- OTHER KEYMAPS  -------------------------
+
+map("n", "<C-x>", ":q<CR>", opts)
+
 -- move lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
