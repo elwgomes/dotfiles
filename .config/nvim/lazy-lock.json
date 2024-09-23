@@ -12,6 +12,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "conform.nvim": { "branch": "master", "commit": "46c107ad0e7d83b5a7091112ec2994c847577d32" },
   "cyberdream.nvim": { "branch": "main", "commit": "cd3c2e7955034a5bec0e1beb9d7cb80c639ef5d5" },
+  "darcula-dark.nvim": { "branch": "main", "commit": "15369feb5b05b8f9a1f99ae8df282a48241ea454" },
   "dashboard-nvim": { "branch": "master", "commit": "fabf5feec96185817c732d47d363f34034212685" },
   "dressing.nvim": { "branch": "master", "commit": "1b7921eecc65af1baf8ac1dc06f0794934cbcfb2" },
   "everforest": { "branch": "master", "commit": "93b89630861a4c8a1be07bc54f6d53487acb2e57" },

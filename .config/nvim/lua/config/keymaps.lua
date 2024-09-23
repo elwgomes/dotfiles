@@ -12,7 +12,7 @@ map("n", "<leader>pv", vim.cmd.Ex)
 -- map("n", "<C-y>", ":!php artisan serve<CR>", { noremap = true, silent = true })
 
 ----------------------- GO SHIT -------------------------
--- map("n", "<C-y>", ":!go run .<CR>", { noremap = true, silent = true })
+map("n", "<C-y>", ":!go run .<CR>", { noremap = true, silent = true })
 
 ----------------------- JAVA SHIT -------------------------
 

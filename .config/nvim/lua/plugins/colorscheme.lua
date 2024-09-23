@@ -42,11 +42,12 @@ return {
   { "aktersnurra/no-clown-fiesta.nvim" },
   { "mikesmithgh/gruvsquirrel.nvim" },
   { "cdmill/neomodern.nvim" },
+  { "xiantang/darcula-dark.nvim" },
   {
     "LazyVim/LazyVim",
     lazy = true,
     opts = {
-      colorscheme = "mellifluous",
+      colorscheme = "vim",
     },
   },
 }
