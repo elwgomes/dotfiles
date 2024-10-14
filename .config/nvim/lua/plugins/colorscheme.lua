@@ -43,11 +43,14 @@ return {
   { "mikesmithgh/gruvsquirrel.nvim" },
   { "cdmill/neomodern.nvim" },
   { "xiantang/darcula-dark.nvim" },
+  { "sam4llis/nvim-tundra" },
+  { "Badacadabra/vim-archery" },
   {
     "LazyVim/LazyVim",
     lazy = true,
     opts = {
-      colorscheme = "vim",
+
+      colorscheme = "solarized-osaka",
     },
   },
 }

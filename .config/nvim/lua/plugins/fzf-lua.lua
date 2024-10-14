@@ -50,7 +50,7 @@ return {
             height = 0.40, -- Ajusta a altura da janela
             width = 0.65, -- Ajusta a largura da janela
           },
-
+          cwd = "~/.config/nvim",
           fzf_opts = {
             ["--layout"] = "reverse",
             ["--info"] = "inline",

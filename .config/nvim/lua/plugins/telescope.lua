@@ -23,10 +23,10 @@ return {
             },
           },
           sorting_strategy = "ascending", -- Resultados em ordem crescente
-          prompt_prefix = "skxlz ", -- Define um ícone no prompt
-          selection_caret = "* ", -- Define o caractere de seleção
-          -- prompt_prefix = "🔍 ", -- Define um ícone no prompt
-          -- selection_caret = "➜➤ ", -- Define o caractere de seleção
+          -- prompt_prefix = "skxlz ", -- Define um ícone no prompt
+          -- selection_caret = "* ", -- Define o caractere de seleção
+          prompt_prefix = "🔍 ", -- Define um ícone no prompt
+          selection_caret = "➜ ", -- Define o caractere de seleção
 
           winblend = 10, -- Transparência na janela
           border = true, -- Habilita borda

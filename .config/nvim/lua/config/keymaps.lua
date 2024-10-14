@@ -12,12 +12,15 @@ map("n", "<leader>pv", vim.cmd.Ex)
 -- map("n", "<C-y>", ":!php artisan serve<CR>", { noremap = true, silent = true })
 
 ----------------------- GO SHIT -------------------------
-map("n", "<C-y>", ":!go run .<CR>", { noremap = true, silent = true })
+-- map("n", "<C-y>", ":!go run .<CR>", { noremap = true, silent = true })
+
+----------------------- ANGULAR SHIT -------------------------
+map("n", "<C-y>", ":!npm run start<CR>", { noremap = true, silent = true })
 
 ----------------------- JAVA SHIT -------------------------
 
 local function java_keymaps()
-  map("n", "<C-y>", ":JavaRunnerRunMain<CR>", opts)
+  map("n", "<leader>ry", ":JavaRunnerRunMain<CR>", opts)
   map("n", "<C-c>", ":JavaRunnerStopMain<CR>", opts)
   map("n", "<C-b>", ":JavaBuildBuildWorkspace<CR>", opts)
 end
@@ -30,6 +33,9 @@ vim.api.nvim_create_autocmd("FileType", {
 ----------------------- OTHER KEYMAPS  -------------------------
 
 map("n", "<C-x>", ":q<CR>", opts)
+map("n", "fd", ":bd<CR>", opts)
+map("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+map("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
 
 -- move lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
