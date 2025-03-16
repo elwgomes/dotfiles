@@ -19,19 +19,6 @@ return {
       colorscheme = "gruvbox",
     },
   },
-  {
-    "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-devicons" },
-    config = function()
-      require("fzf-lua").setup({
-        defaults = {
-          git_icons = false,
-          file_icons = false,
-          color_icons = false,
-        },
-      })
-    end,
-  },
 
   -- change trouble config
   {
@@ -51,15 +38,6 @@ return {
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
     end,
-  },
-
-  {
-    "folke/noice.nvim",
-    opts = {
-      presets = {
-        lsp_doc_border = true,
-      },
-    },
   },
 
   -- change some telescope options and a keymap to browse plugin files

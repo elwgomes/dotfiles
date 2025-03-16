@@ -45,12 +45,17 @@ return {
   { "xiantang/darcula-dark.nvim" },
   { "sam4llis/nvim-tundra" },
   { "Badacadabra/vim-archery" },
+  { "miikanissi/modus-themes.nvim" },
+  { "ronisbr/nano-theme.nvim" },
+  { "projekt0n/github-nvim-theme", name = "github-theme" },
+  { "yorickpeterse/nvim-grey", name = "grey" },
+  { "polirritmico/monokai-nightasty.nvim" },
+  { "bluz71/vim-moonfly-colors" },
   {
     "LazyVim/LazyVim",
     lazy = true,
     opts = {
-
-      colorscheme = "solarized-osaka",
+      colorscheme = "moonfly",
     },
   },
 }
