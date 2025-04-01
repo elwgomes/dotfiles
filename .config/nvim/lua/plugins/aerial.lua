@@ -3,7 +3,6 @@ return {
   opts = {
     layout = { width = 70 },
   },
-  -- Optional dependencies
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",

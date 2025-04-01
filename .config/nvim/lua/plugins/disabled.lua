@@ -1,36 +1,30 @@
 return {
-  -- lazy
   {
     "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
     opts = {
-      -- bigfile = { enabled = true },
+      bigfile = { enabled = true },
       dashboard = { enabled = false },
-      -- indent = { enabled = false },
-      -- input = { enabled = false },
-      -- picker = { enabled = false },
-      -- notifier = { enabled = false },
-      -- quickfile = { enabled = false },
+      indent = { enabled = true },
+      input = { enabled = true },
+      picker = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
       scroll = { enabled = false },
-      statuscolumn = { enabled = false },
-      -- words = { enabled = false },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
     },
   },
-  { "folke/noice.nvim", enabled = false },
-  { "rcarriga/nvim-notify", enabled = false }, -- notification snippet
-  { "folke/which-key.nvim", enabled = true },
 
-  -- explorers
-  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  { "folke/noice.nvim", enabled = false },
+  { "rcarriga/nvim-notify", enabled = false },
+  { "folke/which-key.nvim", enabled = false },
+
+  { "nvim-neo-tree/neo-tree.nvim", enabled = true },
   { "ryanoasis/vim-devicons", enabled = false },
   { "preservim/nerdtree", enabled = true },
+  { "nvim-tree/nvim-tree.lua", enabled = false },
 
-  -- bufferlines
-  { "nvim-lualine/lualine.nvim", enabled = false }, -- statusline
+  { "tjdevries/express_line.nvim", enabled = false },
+  { "nvim-lualine/lualine.nvim", enabled = false },
   { "akinsho/bufferline.nvim", enabled = true },
-
-  -- fuzzy finders
-  { "nvim-telescope/telescope.nvim", enabled = false },
-  { "ibhagwan/fzf-lua", enabled = true },
 }

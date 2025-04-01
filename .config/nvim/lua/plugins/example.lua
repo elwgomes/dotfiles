@@ -38,6 +38,10 @@ return {
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
     end,
+    window = {
+      completion = require("cmp").config.window.bordered(),
+      documentation = require("cmp").config.window.bordered(),
+    },
   },
 
   -- change some telescope options and a keymap to browse plugin files
@@ -59,6 +63,7 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        file_ignore_patterns = { "%.class$" }, -- Ignora arquivos .class
       },
     },
   },
@@ -120,6 +125,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "java", -- added by me
         "bash",
         "html",
         "javascript",
@@ -157,7 +163,11 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
+      table.insert(opts.sections.lualine_x, {
+        function()
+          return "😄"
+        end,
+      })
     end,
   },
 

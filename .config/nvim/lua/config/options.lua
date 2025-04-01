@@ -1,15 +1,21 @@
 local opt = vim.opt
+
+opt.fillchars:remove("eob")
+opt.showmode = true
+
+opt.guicursor = "n:blinkon1,v:blinkon1,c:blinkon1,i:blinkon1"
+
 opt.guicursor = ""
 
 opt.nu = true
 opt.relativenumber = true
 
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = false
-
 opt.smartindent = true
+
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = false
 
 opt.wrap = false
 opt.swapfile = true
@@ -24,14 +30,3 @@ opt.signcolumn = "no"
 opt.isfname:append("@-@")
 opt.updatetime = 50
 opt.colorcolumn = "80"
-
-vim.cmd([[
-  colorscheme default
-]])
-
--- Definir cor de fundo do terminal integrado especificamente
-vim.api.nvim_set_hl(0, "TermNormal", { bg = "#1e1e1e", fg = "#ffffff" }) -- Fundo escuro e texto claro
-vim.api.nvim_set_hl(0, "TermCursor", { bg = "#ffffff", fg = "#000000" }) -- Cursor no terminal
-vim.api.nvim_set_hl(0, "TermCursorNC", { bg = "#888888", fg = "#000000" }) -- Cursor inativo
-
-vim.opt.termguicolors = true
