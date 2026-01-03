@@ -1,4 +1,5 @@
 -- ============================================================================
+-- Default options:
 --  Packer bootstrap
 -- ============================================================================
 local ensure_packer = function()
@@ -104,8 +105,42 @@ return require("packer").startup(function(use)
 	-- =========================================================================
 	--  Themes
 	-- =========================================================================
-	use("sainnhe/gruvbox-material")
+	use({
+		"sainnhe/gruvbox-material",
+		config = function()
+			vim.g.gruvbox_material_background = "hard"
+			vim.g.gruvbox_material_enable_bold = 1
+			vim.g.gruvbox_material_enable_italic = 1
+			vim.gruvbox_material_foreground = "original"
+		end,
+	})
 	use("mikesmithgh/gruvsquirrel.nvim")
+	use({
+		"ellisonleao/gruvbox.nvim",
+		config = function()
+			require("gruvbox").setup({
+				terminal_colors = true, -- add neovim terminal colors
+				undercurl = true,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = true,
+					emphasis = true,
+					comments = true,
+					operators = false,
+					folds = true,
+				},
+				strikethrough = true,
+				invert_selection = false,
+				invert_signs = true,
+				invert_tabline = false,
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "hard", -- can be "hard", "soft" or empty string
+				transparent_mode = false,
+			})
+		end,
+	})
+
 	use("olimorris/onedarkpro.nvim")
 	use("sainnhe/sonokai")
 	use("vim-scripts/eclipse.vim")
@@ -115,7 +150,6 @@ return require("packer").startup(function(use)
 	use("catppuccin/nvim")
 	use("rose-pine/neovim")
 	use("folke/tokyonight.nvim")
-	use("ellisonleao/gruvbox.nvim")
 	use("EdenEast/nightfox.nvim")
 	use("craftzdog/solarized-osaka.nvim")
 	use("maxmx03/solarized.nvim")
@@ -134,8 +168,33 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("mason-org/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("nvim-treesitter/nvim-treesitter")
-
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
+		run = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = {
+					"bash",
+					"c",
+					"css",
+					"diff",
+					"gitcommit",
+					"html",
+					"javascript",
+					"lua",
+					"luadoc",
+					"markdown",
+					"markdown_inline",
+					"query",
+					"vim",
+					"vimdoc",
+				},
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	})
 	-- =========================================================================
 	--  Formatter
 	-- =========================================================================
@@ -220,6 +279,7 @@ return require("packer").startup(function(use)
 	-- =========================================================================
 
 	use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = true } })
+	use({ "akinsho/bufferline.nvim" })
 	if packer_bootstrap then
 		require("packer").sync()
 	end

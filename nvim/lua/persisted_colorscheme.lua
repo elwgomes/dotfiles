@@ -1,4 +1,4 @@
 return {
-  colorscheme = "retrobox",
+  colorscheme = "gruvbox-material",
   background = "dark",
 }

@@ -96,6 +96,11 @@ _G.packer_plugins = {
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -152,11 +157,13 @@ _G.packer_plugins = {
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["gruvbox-material"] = {
+    config = { "\27LJ\2\nÏ\1\0\0\2\0\b\0\0166\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0'\1\a\0=\1\6\0K\0\1\0\roriginal gruvbox_material_foreground#gruvbox_material_enable_italic!gruvbox_material_enable_bold\thard gruvbox_material_background\6g\bvim\0" },
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["gruvbox.nvim"] = {
+    config = { "\27LJ\2\nš\2\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\5\nfolds\2\fstrings\2\rcomments\2\14operators\1\remphasis\2\1\0\f\17invert_signs\2\21invert_selection\1\18strikethrough\2\14underline\2\vitalic\0\21transparent_mode\1\14undercurl\2\20terminal_colors\2\19invert_tabline\1\tbold\2\rcontrast\thard\finverse\2\nsetup\fgruvbox\frequire\0" },
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
@@ -247,7 +254,7 @@ _G.packer_plugins = {
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-java"] = {
-    config = { "\27LJ\2\nü\1\0\0\4\0\14\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0B\0\2\1K\0\1\0\njdtls\venable\blsp\bvim\22spring_boot_tools\1\0\1\venable\1\23java_debug_adapter\1\0\1\venable\2\14java_test\1\0\3\14java_test\0\23java_debug_adapter\0\22spring_boot_tools\0\1\0\1\venable\2\nsetup\tjava\frequire\0" },
+    config = { "\27LJ\2\nü\1\0\0\4\0\14\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0B\0\2\1K\0\1\0\njdtls\venable\blsp\bvim\22spring_boot_tools\1\0\1\venable\1\23java_debug_adapter\1\0\1\venable\2\14java_test\1\0\3\23java_debug_adapter\0\22spring_boot_tools\0\14java_test\0\1\0\1\venable\2\nsetup\tjava\frequire\0" },
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/nvim-java",
     url = "https://github.com/nvim-java/nvim-java"
@@ -283,6 +290,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
+    config = { "\27LJ\2\n¤\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\vindent\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\3\14highlight\0\vindent\0\21ensure_installed\0\1\15\0\0\tbash\6c\bcss\tdiff\14gitcommit\thtml\15javascript\blua\vluadoc\rmarkdown\20markdown_inline\nquery\bvim\vvimdoc\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -401,6 +409,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-java
+time([[Config for nvim-java]], true)
+try_loadstring("\27LJ\2\nü\1\0\0\4\0\14\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0B\0\2\1K\0\1\0\njdtls\venable\blsp\bvim\22spring_boot_tools\1\0\1\venable\1\23java_debug_adapter\1\0\1\venable\2\14java_test\1\0\3\23java_debug_adapter\0\22spring_boot_tools\0\14java_test\0\1\0\1\venable\2\nsetup\tjava\frequire\0", "config", "nvim-java")
+time([[Config for nvim-java]], false)
+-- Config for: gruvbox.nvim
+time([[Config for gruvbox.nvim]], true)
+try_loadstring("\27LJ\2\nš\2\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\5\nfolds\2\fstrings\2\rcomments\2\14operators\1\remphasis\2\1\0\f\17invert_signs\2\21invert_selection\1\18strikethrough\2\14underline\2\vitalic\0\21transparent_mode\1\14undercurl\2\20terminal_colors\2\19invert_tabline\1\tbold\2\rcontrast\thard\finverse\2\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
+time([[Config for gruvbox.nvim]], false)
 -- Config for: aerial.nvim
 time([[Config for aerial.nvim]], true)
 try_loadstring("\27LJ\2\n¸\1\0\0\5\0\f\0\0166\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\6\0'\2\a\0B\0\2\0029\0\b\0005\2\n\0005\3\t\0=\3\v\2B\0\2\1K\0\1\0\vlayout\1\0\2\vlayout\0\14max_width\3F\1\0\1\nwidth\3(\nsetup\vaerial\frequire <Cmd>AerialToggle float<CR>\n<C-a>\6n\bset\vkeymap\bvim\0", "config", "aerial.nvim")
@@ -413,10 +429,14 @@ time([[Config for vim-tmux-navigator]], false)
 time([[Config for barbecue.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\ntheme\16monokai-pro\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
 time([[Config for barbecue.nvim]], false)
--- Config for: nvim-java
-time([[Config for nvim-java]], true)
-try_loadstring("\27LJ\2\nü\1\0\0\4\0\14\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0B\0\2\1K\0\1\0\njdtls\venable\blsp\bvim\22spring_boot_tools\1\0\1\venable\1\23java_debug_adapter\1\0\1\venable\2\14java_test\1\0\3\14java_test\0\23java_debug_adapter\0\22spring_boot_tools\0\1\0\1\venable\2\nsetup\tjava\frequire\0", "config", "nvim-java")
-time([[Config for nvim-java]], false)
+-- Config for: gruvbox-material
+time([[Config for gruvbox-material]], true)
+try_loadstring("\27LJ\2\nÏ\1\0\0\2\0\b\0\0166\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0'\1\a\0=\1\6\0K\0\1\0\roriginal gruvbox_material_foreground#gruvbox_material_enable_italic!gruvbox_material_enable_bold\thard gruvbox_material_background\6g\bvim\0", "config", "gruvbox-material")
+time([[Config for gruvbox-material]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n¤\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\vindent\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\3\14highlight\0\vindent\0\21ensure_installed\0\1\15\0\0\tbash\6c\bcss\tdiff\14gitcommit\thtml\15javascript\blua\vluadoc\rmarkdown\20markdown_inline\nquery\bvim\vvimdoc\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

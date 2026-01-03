@@ -7,12 +7,21 @@ require("telescope").setup({
 		path_display = function(opts, path)
 			-- caminho relativo ao cwd
 			local rel_path = Path:new(path):make_relative(opts.cwd)
-			local filename = utils.path_tail(rel_path)
-			local head = string.sub(rel_path, 1, #rel_path - #filename - 1)
-			return string.format("%-20s  %s", filename, head) -- arquivo + caminho
-		end,
 
-		prompt_prefix = "   ",
+			-- filename (telescope.lua)
+			local filename = utils.path_tail(rel_path)
+
+			-- diretório (after/plugins/telescope/)
+			local dir = Path:new(rel_path):parent():make_relative(opts.cwd)
+
+			if dir == "." then
+				dir = ""
+			else
+				dir = dir .. "/"
+			end
+
+			return string.format("%-30s %s", filename, dir)
+		end,
 		selection_caret = "  ",
 		sorting_strategy = "ascending",
 		layout_strategy = "flex",
@@ -28,6 +37,10 @@ require("telescope").setup({
 			"^%.git/",
 			"^%.git$",
 			".DS_Store",
+			"%.class$",
+			"^target/",
+			"^build/",
+			"^out/",
 		},
 		mappings = {
 			n = {
@@ -53,17 +66,49 @@ require("telescope").setup({
 	},
 	pickers = {
 		find_files = {
+			prompt_prefix = "pick file -> ",
 			hidden = true,
+			theme = "ivy",
+			border = true,
+			layout_config = {
+				height = 0.45,
+				prompt_position = "top",
+			},
+			previewer = true,
 		},
+
 		live_grep = {
+			prompt_prefix = "pick file -> ",
 			additional_args = { "--hidden" },
+			layout_strategy = "horizontal",
+			layout_config = {
+				prompt_position = "bottom",
+				width = 0.9,
+				height = 0.85,
+				preview_width = 0.55,
+			},
+			previewer = true,
 		},
+
+		colorscheme = {
+			prompt_prefix = "choose scheme -> ",
+			theme = "dropdown",
+			previewer = false,
+			layout_config = {
+				height = 0.3,
+				width = 0.45,
+				prompt_position = "top",
+			},
+		},
+
 		buffers = {
 			sort_mru = true,
 		},
+
 		oldfiles = {
 			cwd_only = true,
 		},
+
 		lsp_document_symbols = {
 			symbol_width = 40,
 		},

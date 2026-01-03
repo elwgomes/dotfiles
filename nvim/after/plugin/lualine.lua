@@ -1,84 +1,136 @@
--- Bubbles config for lualine
--- Author: lokesh-krishna
--- MIT license, see LICENSE for more details.
+local function mode_name()
+	local mode = vim.fn.mode()
 
--- stylua: ignore
-local colors = {
-  blue   = '#80a0ff',
-  cyan   = '#79dac8',
-  black  = '#080808',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  grey   = '#303030',
-}
+	local modes = {
+		n = "NORMAL",
+		i = "INSERT",
+		v = "VISUAL",
+		V = "VISUAL",
+		[""] = "VISUAL",
+		c = "COMMAND",
+		R = "REPLACE",
+		t = "TERMINAL",
+	}
 
-local bubbles_theme = {
-	normal = {
-		a = { fg = colors.black, bg = colors.violet },
-		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.white },
-	},
+	return modes[mode] or mode
+end
 
-	insert = { a = { fg = colors.black, bg = colors.blue } },
-	visual = { a = { fg = colors.black, bg = colors.cyan } },
-	replace = { a = { fg = colors.black, bg = colors.red } },
+local function lsp_names()
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
 
-	inactive = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.white },
-	},
-}
+	if not clients or vim.tbl_isempty(clients) then
+		return "No LSP"
+	end
+
+	local names = {}
+	for _, client in ipairs(clients) do
+		table.insert(names, client.name)
+	end
+	-- •.,:;…!?·
+	return "LSP -> " .. table.concat(names, " · ")
+end
+
+-- =========================
+-- Lualine
+-- =========================
 
 require("lualine").setup({
 	options = {
-		theme = bubbles_theme,
-		component_separators = "",
-		section_separators = { left = "", right = "" },
+		icons_enabled = true,
+		theme = "auto",
 		globalstatus = true,
+
+		component_separators = "",
+		section_separators = {
+			left = "",
+			right = "",
+		},
 	},
+
 	sections = {
+		-- LEFT
 		lualine_a = {
 			{
 				function()
-					local mode = vim.fn.mode()
-					local map = {
-						n = "NORMAL",
-						no = "NORMAL",
-						i = "INSERT",
-						v = "VISUAL",
-						V = "VISUAL",
-						[""] = "VISUAL",
-						c = "COMMAND",
-						R = "REPLACE",
-						t = "TERMINAL",
-					}
-					return " " .. (map[mode] or mode)
+					return " "
 				end,
-				separator = { left = "" },
-				right_padding = 2,
+				padding = { left = 1, right = 0 },
+				separator = { left = "", right = "" },
 			},
 		},
-		lualine_b = { "filename", "branch" },
+
+		lualine_b = {
+			{
+				mode_name,
+				padding = { left = 1, right = 1 },
+				separator = { left = "", right = "" },
+				color = function()
+					local mode = vim.fn.mode()
+					if mode:find("i") then
+						return "lualine_a_insert"
+					elseif mode:find("v") or mode:find("V") then
+						return "lualine_a_visual"
+					elseif mode:find("R") then
+						return "lualine_a_replace"
+					elseif mode:find("c") then
+						return "lualine_a_command"
+					elseif mode:find("t") then
+						return "lualine_a_terminal"
+					end
+					return "lualine_a_normal"
+				end,
+			},
+		},
+
+		-- CENTER
 		lualine_c = {
-			"%=", --[[ add your center components here in place of this comment ]]
+			{
+				"filename",
+				path = 1,
+			},
+			{
+				"branch",
+				icon = "",
+			},
 		},
-		lualine_x = {},
-		lualine_y = { "filetype", "progress" },
+
+		-- RIGHT
+		lualine_x = {
+			{
+				"diagnostics",
+				sources = { "nvim_diagnostic" },
+				symbols = {
+					error = " ",
+					warn = " ",
+					info = " ",
+					hint = "󰌵 ",
+				},
+			},
+			{
+				lsp_names,
+				icon = " ",
+			},
+			{
+				function()
+					return vim.env.USER or "user"
+				end,
+				icon = " ",
+			},
+		},
+		lualine_y = {
+			"progress",
+		},
 		lualine_z = {
-			{ "location", separator = { right = "" }, left_padding = 2 },
+			"location",
 		},
 	},
+
 	inactive_sections = {
-		lualine_a = { "filename" },
+		lualine_a = {},
 		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
 		lualine_y = {},
-		lualine_z = { "location" },
+		lualine_z = {},
 	},
-	tabline = {},
-	extensions = {},
 })
-require("lualine").refresh()
