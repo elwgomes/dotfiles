@@ -4,9 +4,12 @@ local lspconfig = require("mason-lspconfig")
 mason.setup({
 	ui = {
 		icons = {
-			package_installed = "✓ ",
-			package_pending = "➜ ",
-			package_uninstalled = "✗ ",
+			-- package_installed = "✓ ",
+			-- package_pending = "➜ ",
+			-- package_uninstalled = "✗ ",
+			package_installed = " ",
+			package_pending = " ",
+			package_uninstalled = " ",
 		},
 	},
 })

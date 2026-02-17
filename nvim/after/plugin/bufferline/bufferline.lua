@@ -9,7 +9,7 @@ require("bufferline").setup({
 		close_command = "bdelete! %d",
 		right_mouse_command = "bdelete! %d",
 
-		separator_style = "slant",
+		-- separator_style = "thin",
 
 		show_buffer_close_icons = true,
 		show_close_icon = false,
@@ -22,19 +22,5 @@ require("bufferline").setup({
 				separator = true,
 			},
 		},
-
-		-- 👇 AQUI
-		name_formatter = function(buf)
-			local icon, _ =
-				require("nvim-web-devicons").get_icon(buf.name, vim.fn.fnamemodify(buf.name, ":e"), { default = true })
-
-			local filename = vim.fn.fnamemodify(buf.name, ":t")
-
-			if icon then
-				return " " .. filename
-			end
-
-			return filename
-		end,
 	},
 })

@@ -12,7 +12,7 @@ require("nvim-tree").setup({
 	},
 
 	view = {
-		width = 45,
+		width = 55,
 	},
 
 	renderer = {
@@ -28,10 +28,10 @@ require("nvim-tree").setup({
 		},
 		icons = {
 			show = {
-				file = false,
-				folder = false,
+				file = true,
+				folder = true,
 				folder_arrow = false,
-				git = false,
+				git = true,
 			},
 		},
 	},

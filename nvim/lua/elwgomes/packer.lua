@@ -105,6 +105,27 @@ return require("packer").startup(function(use)
 	-- =========================================================================
 	--  Themes
 	-- =========================================================================
+
+	-- use({
+	-- 	"xiantang/darcula-dark.nvim",
+	-- 	requires = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- 	config = function()
+	-- 		require("darcula").setup({
+	-- 			opt = {
+	-- 				integrations = {
+	-- 					telescope = false,
+	-- 					snacks = true,
+	-- 					lualine = true,
+	-- 					lsp_semantics_token = true,
+	-- 					nvim_cmp = true,
+	-- 					dap_nvim = true,
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- })
 	use({
 		"sainnhe/gruvbox-material",
 		config = function()
@@ -278,8 +299,19 @@ return require("packer").startup(function(use)
 	--  Bootstrap
 	-- =========================================================================
 
-	use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = true } })
+	use({ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = true }, disable = true })
 	use({ "akinsho/bufferline.nvim" })
+
+	use({
+		"sphamba/smear-cursor.nvim",
+		config = function()
+			require("smear_cursor").setup({
+				cursor_color = "#C578DC",
+			})
+		end,
+		disable = true,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

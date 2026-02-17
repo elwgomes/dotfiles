@@ -95,7 +95,7 @@ require("telescope").setup({
 			theme = "dropdown",
 			previewer = false,
 			layout_config = {
-				height = 0.3,
+				height = 0.75,
 				width = 0.45,
 				prompt_position = "top",
 			},

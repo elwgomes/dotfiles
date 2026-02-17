@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["aerial.nvim"] = {
-    config = { "\27LJ\2\n¸\1\0\0\5\0\f\0\0166\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\6\0'\2\a\0B\0\2\0029\0\b\0005\2\n\0005\3\t\0=\3\v\2B\0\2\1K\0\1\0\vlayout\1\0\2\vlayout\0\14max_width\3F\1\0\1\nwidth\3(\nsetup\vaerial\frequire <Cmd>AerialToggle float<CR>\n<C-a>\6n\bset\vkeymap\bvim\0" },
+    config = { "\27LJ\2\n¸\1\0\0\5\0\f\0\0166\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\6\0'\2\a\0B\0\2\0029\0\b\0005\2\n\0005\3\t\0=\3\v\2B\0\2\1K\0\1\0\vlayout\1\0\2\14max_width\3F\vlayout\0\1\0\1\nwidth\3(\nsetup\vaerial\frequire <Cmd>AerialToggle float<CR>\n<C-a>\6n\bset\vkeymap\bvim\0" },
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
@@ -163,7 +163,7 @@ _G.packer_plugins = {
     url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["gruvbox.nvim"] = {
-    config = { "\27LJ\2\nš\2\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\5\nfolds\2\fstrings\2\rcomments\2\14operators\1\remphasis\2\1\0\f\17invert_signs\2\21invert_selection\1\18strikethrough\2\14underline\2\vitalic\0\21transparent_mode\1\14undercurl\2\20terminal_colors\2\19invert_tabline\1\tbold\2\rcontrast\thard\finverse\2\nsetup\fgruvbox\frequire\0" },
+    config = { "\27LJ\2\nš\2\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\5\14operators\1\fstrings\2\remphasis\2\rcomments\2\nfolds\2\1\0\f\tbold\2\rcontrast\thard\19invert_tabline\1\vitalic\0\21invert_selection\1\finverse\2\21transparent_mode\1\20terminal_colors\2\17invert_signs\2\18strikethrough\2\14underline\2\14undercurl\2\nsetup\fgruvbox\frequire\0" },
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
@@ -202,11 +202,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/lua-async-await",
     url = "https://github.com/nvim-java/lua-async-await"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/leonardo/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -415,16 +410,12 @@ try_loadstring("\27LJ\2\nü\1\0\0\4\0\14\0\0186\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2
 time([[Config for nvim-java]], false)
 -- Config for: gruvbox.nvim
 time([[Config for gruvbox.nvim]], true)
-try_loadstring("\27LJ\2\nš\2\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\5\nfolds\2\fstrings\2\rcomments\2\14operators\1\remphasis\2\1\0\f\17invert_signs\2\21invert_selection\1\18strikethrough\2\14underline\2\vitalic\0\21transparent_mode\1\14undercurl\2\20terminal_colors\2\19invert_tabline\1\tbold\2\rcontrast\thard\finverse\2\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
+try_loadstring("\27LJ\2\nš\2\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vitalic\1\0\5\14operators\1\fstrings\2\remphasis\2\rcomments\2\nfolds\2\1\0\f\tbold\2\rcontrast\thard\19invert_tabline\1\vitalic\0\21invert_selection\1\finverse\2\21transparent_mode\1\20terminal_colors\2\17invert_signs\2\18strikethrough\2\14underline\2\14undercurl\2\nsetup\fgruvbox\frequire\0", "config", "gruvbox.nvim")
 time([[Config for gruvbox.nvim]], false)
--- Config for: aerial.nvim
-time([[Config for aerial.nvim]], true)
-try_loadstring("\27LJ\2\n¸\1\0\0\5\0\f\0\0166\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\6\0'\2\a\0B\0\2\0029\0\b\0005\2\n\0005\3\t\0=\3\v\2B\0\2\1K\0\1\0\vlayout\1\0\2\vlayout\0\14max_width\3F\1\0\1\nwidth\3(\nsetup\vaerial\frequire <Cmd>AerialToggle float<CR>\n<C-a>\6n\bset\vkeymap\bvim\0", "config", "aerial.nvim")
-time([[Config for aerial.nvim]], false)
--- Config for: vim-tmux-navigator
-time([[Config for vim-tmux-navigator]], true)
-try_loadstring("\27LJ\2\n‹\2\0\0\5\0\f\0\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\6\0'\4\a\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\b\0'\4\t\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0'\4\v\0B\0\4\1K\0\1\0\31<Cmd>TmuxNavigateRight<CR>\n<C-l>\28<Cmd>TmuxNavigateUp<CR>\n<C-k>\30<Cmd>TmuxNavigateDown<CR>\n<C-j>\30<Cmd>TmuxNavigateLeft<CR>\n<C-h>\6n\bset\vkeymap\bvim\0", "config", "vim-tmux-navigator")
-time([[Config for vim-tmux-navigator]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n¤\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\vindent\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\3\14highlight\0\vindent\0\21ensure_installed\0\1\15\0\0\tbash\6c\bcss\tdiff\14gitcommit\thtml\15javascript\blua\vluadoc\rmarkdown\20markdown_inline\nquery\bvim\vvimdoc\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
 -- Config for: barbecue.nvim
 time([[Config for barbecue.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\ntheme\16monokai-pro\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
@@ -433,10 +424,14 @@ time([[Config for barbecue.nvim]], false)
 time([[Config for gruvbox-material]], true)
 try_loadstring("\27LJ\2\nÏ\1\0\0\2\0\b\0\0166\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\1\0=\1\4\0006\0\0\0009\0\1\0)\1\1\0=\1\5\0006\0\0\0'\1\a\0=\1\6\0K\0\1\0\roriginal gruvbox_material_foreground#gruvbox_material_enable_italic!gruvbox_material_enable_bold\thard gruvbox_material_background\6g\bvim\0", "config", "gruvbox-material")
 time([[Config for gruvbox-material]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n¤\2\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\vindent\1\0\1\venable\2\14highlight\1\0\1\venable\2\21ensure_installed\1\0\3\14highlight\0\vindent\0\21ensure_installed\0\1\15\0\0\tbash\6c\bcss\tdiff\14gitcommit\thtml\15javascript\blua\vluadoc\rmarkdown\20markdown_inline\nquery\bvim\vvimdoc\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
+-- Config for: vim-tmux-navigator
+time([[Config for vim-tmux-navigator]], true)
+try_loadstring("\27LJ\2\n‹\2\0\0\5\0\f\0\0296\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\6\0'\4\a\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\b\0'\4\t\0B\0\4\0016\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\n\0'\4\v\0B\0\4\1K\0\1\0\31<Cmd>TmuxNavigateRight<CR>\n<C-l>\28<Cmd>TmuxNavigateUp<CR>\n<C-k>\30<Cmd>TmuxNavigateDown<CR>\n<C-j>\30<Cmd>TmuxNavigateLeft<CR>\n<C-h>\6n\bset\vkeymap\bvim\0", "config", "vim-tmux-navigator")
+time([[Config for vim-tmux-navigator]], false)
+-- Config for: aerial.nvim
+time([[Config for aerial.nvim]], true)
+try_loadstring("\27LJ\2\n¸\1\0\0\5\0\f\0\0166\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0'\4\5\0B\0\4\0016\0\6\0'\2\a\0B\0\2\0029\0\b\0005\2\n\0005\3\t\0=\3\v\2B\0\2\1K\0\1\0\vlayout\1\0\2\14max_width\3F\vlayout\0\1\0\1\nwidth\3(\nsetup\vaerial\frequire <Cmd>AerialToggle float<CR>\n<C-a>\6n\bset\vkeymap\bvim\0", "config", "aerial.nvim")
+time([[Config for aerial.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

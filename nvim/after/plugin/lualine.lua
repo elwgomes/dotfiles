@@ -1,136 +1,136 @@
-local function mode_name()
-	local mode = vim.fn.mode()
-
-	local modes = {
-		n = "NORMAL",
-		i = "INSERT",
-		v = "VISUAL",
-		V = "VISUAL",
-		[""] = "VISUAL",
-		c = "COMMAND",
-		R = "REPLACE",
-		t = "TERMINAL",
-	}
-
-	return modes[mode] or mode
-end
-
-local function lsp_names()
-	local clients = vim.lsp.get_clients({ bufnr = 0 })
-
-	if not clients or vim.tbl_isempty(clients) then
-		return "No LSP"
-	end
-
-	local names = {}
-	for _, client in ipairs(clients) do
-		table.insert(names, client.name)
-	end
-	-- •.,:;…!?·
-	return "LSP -> " .. table.concat(names, " · ")
-end
-
--- =========================
--- Lualine
--- =========================
-
-require("lualine").setup({
-	options = {
-		icons_enabled = true,
-		theme = "auto",
-		globalstatus = true,
-
-		component_separators = "",
-		section_separators = {
-			left = "",
-			right = "",
-		},
-	},
-
-	sections = {
-		-- LEFT
-		lualine_a = {
-			{
-				function()
-					return " "
-				end,
-				padding = { left = 1, right = 0 },
-				separator = { left = "", right = "" },
-			},
-		},
-
-		lualine_b = {
-			{
-				mode_name,
-				padding = { left = 1, right = 1 },
-				separator = { left = "", right = "" },
-				color = function()
-					local mode = vim.fn.mode()
-					if mode:find("i") then
-						return "lualine_a_insert"
-					elseif mode:find("v") or mode:find("V") then
-						return "lualine_a_visual"
-					elseif mode:find("R") then
-						return "lualine_a_replace"
-					elseif mode:find("c") then
-						return "lualine_a_command"
-					elseif mode:find("t") then
-						return "lualine_a_terminal"
-					end
-					return "lualine_a_normal"
-				end,
-			},
-		},
-
-		-- CENTER
-		lualine_c = {
-			{
-				"filename",
-				path = 1,
-			},
-			{
-				"branch",
-				icon = "",
-			},
-		},
-
-		-- RIGHT
-		lualine_x = {
-			{
-				"diagnostics",
-				sources = { "nvim_diagnostic" },
-				symbols = {
-					error = " ",
-					warn = " ",
-					info = " ",
-					hint = "󰌵 ",
-				},
-			},
-			{
-				lsp_names,
-				icon = " ",
-			},
-			{
-				function()
-					return vim.env.USER or "user"
-				end,
-				icon = " ",
-			},
-		},
-		lualine_y = {
-			"progress",
-		},
-		lualine_z = {
-			"location",
-		},
-	},
-
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-})
+-- local function mode_name()
+-- 	local mode = vim.fn.mode()
+--
+-- 	local modes = {
+-- 		n = "NORMAL",
+-- 		i = "INSERT",
+-- 		v = "VISUAL",
+-- 		V = "VISUAL",
+-- 		[""] = "VISUAL",
+-- 		c = "COMMAND",
+-- 		R = "REPLACE",
+-- 		t = "TERMINAL",
+-- 	}
+--
+-- 	return modes[mode] or mode
+-- end
+--
+-- local function lsp_names()
+-- 	local clients = vim.lsp.get_clients({ bufnr = 0 })
+--
+-- 	if not clients or vim.tbl_isempty(clients) then
+-- 		return "No LSP"
+-- 	end
+--
+-- 	local names = {}
+-- 	for _, client in ipairs(clients) do
+-- 		table.insert(names, client.name)
+-- 	end
+-- 	-- •.,:;…!?·
+-- 	return "LSP -> " .. table.concat(names, " · ")
+-- end
+--
+-- -- =========================
+-- -- Lualine
+-- -- =========================
+--
+-- require("lualine").setup({
+-- 	options = {
+-- 		icons_enabled = true,
+-- 		theme = "auto",
+-- 		globalstatus = true,
+--
+-- 		component_separators = "",
+-- 		section_separators = {
+-- 			left = "",
+-- 			right = "",
+-- 		},
+-- 	},
+--
+-- 	sections = {
+-- 		-- LEFT
+-- 		lualine_a = {
+-- 			{
+-- 				function()
+-- 					return " "
+-- 				end,
+-- 				padding = { left = 1, right = 0 },
+-- 				separator = { left = "", right = "" },
+-- 			},
+-- 		},
+--
+-- 		lualine_b = {
+-- 			{
+-- 				mode_name,
+-- 				padding = { left = 1, right = 1 },
+-- 				separator = { left = "", right = "" },
+-- 				color = function()
+-- 					local mode = vim.fn.mode()
+-- 					if mode:find("i") then
+-- 						return "lualine_a_insert"
+-- 					elseif mode:find("v") or mode:find("V") then
+-- 						return "lualine_a_visual"
+-- 					elseif mode:find("R") then
+-- 						return "lualine_a_replace"
+-- 					elseif mode:find("c") then
+-- 						return "lualine_a_command"
+-- 					elseif mode:find("t") then
+-- 						return "lualine_a_terminal"
+-- 					end
+-- 					return "lualine_a_normal"
+-- 				end,
+-- 			},
+-- 		},
+--
+-- 		-- CENTER
+-- 		lualine_c = {
+-- 			{
+-- 				"filename",
+-- 				path = 1,
+-- 			},
+-- 			{
+-- 				"branch",
+-- 				icon = "",
+-- 			},
+-- 		},
+--
+-- 		-- RIGHT
+-- 		lualine_x = {
+-- 			{
+-- 				"diagnostics",
+-- 				sources = { "nvim_diagnostic" },
+-- 				symbols = {
+-- 					error = " ",
+-- 					warn = " ",
+-- 					info = " ",
+-- 					hint = "󰌵 ",
+-- 				},
+-- 			},
+-- 			{
+-- 				lsp_names,
+-- 				icon = " ",
+-- 			},
+-- 			{
+-- 				function()
+-- 					return vim.env.USER or "user"
+-- 				end,
+-- 				icon = " ",
+-- 			},
+-- 		},
+-- 		lualine_y = {
+-- 			"progress",
+-- 		},
+-- 		lualine_z = {
+-- 			"location",
+-- 		},
+-- 	},
+--
+-- 	inactive_sections = {
+-- 		lualine_a = {},
+-- 		lualine_b = {},
+-- 		lualine_c = { "filename" },
+-- 		lualine_x = { "location" },
+-- 		lualine_y = {},
+-- 		lualine_z = {},
+-- 	},
+-- })

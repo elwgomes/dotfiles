@@ -14,8 +14,8 @@ bind("i", "jj", "<Esc>", opts)
 bind({ "n", "v" }, "<S-e>", "$", opts)
 bind({ "n", "v" }, "<S-f>", "0", opts)
 
-bind({ "v", "n" }, "<C-j>", "5j", opts)
-bind({ "v", "n" }, "<C-k>", "5k", opts)
+bind({ "v", "n" }, "<C-S-j>", "5j", opts)
+bind({ "v", "n" }, "<C-S-k>", "5k", opts)
 
 bind("n", "fd", ":bd<CR>", opts)
 
